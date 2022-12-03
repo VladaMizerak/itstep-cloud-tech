@@ -15,3 +15,4 @@ aws autoscaling update-auto-scaling-group --auto-scaling-group-name ASG --health
 LB_DNS=$(aws elbv2 describe-load-balancers --query 'LoadBalancers[0].DNSName' --output text)
 aws autoscaling describe-auto-scaling-groups --auto-scaling-group-name ASG
 echo $LB_DNS
+
