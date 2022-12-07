@@ -12,6 +12,7 @@ resource "aws_vpc" "main" {
     }
 }
 
+
 resource "aws_subnet" "subnet1" {
     vpc_id                  = aws_vpc.main.id
     cidr_block              = "10.0.0.0/24"
@@ -118,7 +119,7 @@ resource "aws_db_instance" "rds_db" {
     instance_class         = "db.t2.micro"
     name                   = "dbtest"
     username               = "testuser"
-    password               = "Lgfd!53Kjst34"
+    password               = var.password
     parameter_group_name   = "default.mysql5.7"
     vpc_security_group_ids = [aws_security_group.sg.id]
     db_subnet_group_name   = aws_db_subnet_group.db_sg.id
