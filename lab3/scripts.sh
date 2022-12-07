@@ -1,4 +1,3 @@
-#!/bin/bash
 aws ec2 create-key-pair --key-name MyKeyPair1 --query 'KeyMaterial' --output text > MyKeyPair1.pem 
 chmod 400 MyKeyPair1.pem 
 VPC_ID=$(aws ec2 describe-vpcs --query 'Vpcs[0].VpcId' --output text) 

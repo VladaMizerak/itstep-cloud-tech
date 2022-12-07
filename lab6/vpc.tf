@@ -119,7 +119,7 @@ resource "aws_db_instance" "rds_db" {
     instance_class         = "db.t2.micro"
     name                   = "dbtest"
     username               = "testuser"
-    password               = var.password
+    password               = var.password 
     parameter_group_name   = "default.mysql5.7"
     vpc_security_group_ids = [aws_security_group.sg.id]
     db_subnet_group_name   = aws_db_subnet_group.db_sg.id
