@@ -28,4 +28,5 @@ aws ec2 run-instances --image-id ami-0533f2ba8a1995cf9 --instance-type t2.micro 
 Instance_ID=$(aws ec2 describe-instances --instance-ids --query 'Reservations[0].Instances[0].InstanceId' --output text) 
 aws ec2 modify-vpc-attribute --enable-dns-hostnames --vpc-id $Vpc_ID 
 itstepuser=$(aws ec2 describe-instances --instance-ids $Instance_ID --query 'Reservations[].Instances[].PublicDnsName' --output text) 
+
 echo ssh -i "cli-keyPair.pem" ec2-itstepuser@$itstepuser

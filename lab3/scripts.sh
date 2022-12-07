@@ -1,5 +1,6 @@
 aws ec2 create-key-pair --key-name MyKeyPair1 --query 'KeyMaterial' --output text > MyKeyPair1.pem 
 chmod 400 MyKeyPair1.pem 
+
 VPC_ID=$(aws ec2 describe-vpcs --query 'Vpcs[0].VpcId' --output text) 
 aws ec2 create-security-group --group-name SecurityGroup --description "My security group" 
 SG=$(aws ec2 describe-security-groups --query 'SecurityGroups[0].GroupId' --output text) 

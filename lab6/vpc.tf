@@ -126,3 +126,4 @@ resource "aws_db_instance" "rds_db" {
     publicly_accessible    = true
     skip_final_snapshot    = true
 }
+
